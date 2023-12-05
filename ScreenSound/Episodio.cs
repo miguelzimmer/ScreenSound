@@ -9,17 +9,18 @@
 
     public int Duracao { get; set; }
     public int Numero { get; set; }
-    public string Resumo { get; set; }
-    public string Titulo { get; }
+    public string Resumo => $"Episódio número:{Numero} com o título de:{Titulo} e com a duração:{Duracao} com o convidado {convidado }"
+;   public string Titulo { get; }
+    public Convidado convidado { get; set; }
 
 
 
 
 
 
-    public void AdicionarConvidados()
+    public void AdicionarConvidados(Convidado conv)
     {
-
+        convidado = conv;
     }
 
 }

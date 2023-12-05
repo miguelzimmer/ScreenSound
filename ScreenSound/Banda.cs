@@ -7,6 +7,7 @@
         Nome = nome;
     }
     public string Nome { get; }
+    
 
     public void AdicionarAlbum(Album album)
     {

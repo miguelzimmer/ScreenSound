@@ -5,21 +5,29 @@
         Host = host;
         Nome = nome;
     }
-
+    private readonly List<Episodio> episodiolist = new List<Episodio>();
     public string Host {  get; }
     public string Nome { get; }
-    public int TotalEpisodios { get; set; }
+    public int TotalEpisodios => episodiolist.Count;
 
-    private readonly List<Episodio> episodiolist;
+    
 
     public void AdicionarEpisodio(Episodio ep)
     {
         episodiolist.Add(ep);
+        Console.WriteLine("Um novo episodio foi adicionado!");
     }
 
     public void ExibirDetalhes()
     {
-        Console.WriteLine($"Olá seja bem vindo ao podcast {Nome} aqui quem fala é o {Host}\n");
+        Console.WriteLine($"Segue a lista de episódios meus amigos\n");
+        foreach (Episodio item in episodiolist)
+        {
+            Console.WriteLine(item.Resumo);
+
+        }
+        Console.WriteLine("\n");
+        Console.WriteLine($"Temos o total de episódios que é:{TotalEpisodios}");
 
     }
 }
